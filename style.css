@@ -5,16 +5,7 @@
   padding: 0;
 }
 
-/* for headers/titles */
-@font-face {
-    font-family: 'HelveticaNowDisplay';
-    font-style: normal;
-    font-weight: 700;
-    src: url('path/to/HelveticaNowDisplay-W05-Bd.woff2') format('woff2'),
-         url('path/to/HelveticaNowDisplay-W05-Bd.woff') format('woff');
-}
-
-/* for body */
+/* for headers */
 @font-face {
   font-family: 'Halesworth Regular';
   src: url('path/to/halesworth-regular.woff2') format('woff2'),
@@ -23,9 +14,18 @@
   font-style: normal;
 }
 
+/* for body */
+@font-face {
+    font-family: 'HelveticaNowDisplay';
+    font-style: normal;
+    font-weight: 700;
+    src: url('path/to/HelveticaNowDisplay-W05-Bd.woff2') format('woff2'),
+         url('path/to/HelveticaNowDisplay-W05-Bd.woff') format('woff');
+}
+
 /* —— body + fonts —— */
 body {
-  font-family: 'Halesworth Regular', serif;
+  font-family: 'HelveticaNowDisplay', sans-serif;
   color: #333;
   display: flex;
   justify-content: center;
@@ -43,7 +43,9 @@ body {
 }
 
 .site-title {
-  font-family: 'HelveticaNowDisplay', sans-serif;
+  font-family: 'Halesworth Regular', serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   font-size: 22px;
   margin-bottom: 10px;
 }
@@ -67,6 +69,7 @@ body {
 /* messages */
 .msg {
   margin-bottom: 14px;
+  font-weight: bolder;
   line-height: 1.5;
 }
 
@@ -75,7 +78,7 @@ body {
 }
 
 .msg.ai {
-  color: #666666;
+  color: #3D3D3D;
 }
 
 /* input row */
@@ -83,24 +86,29 @@ body {
   display: flex;
   gap: 12px;
   margin-top: 16px;
+  transition: 0.3s ease-in-out;
 }
 
 .chat-form input {
   flex: 1;
-  font-family: 'Halesworth Regular', serif;
+  font-family: 'HelveticaNowDisplay', sans-serif;
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #3D3D3D;
   font-size: 18px;
+  transition: 0.3s ease-in-out;
 }
 
 .chat-form input:focus {
-  outline: 2px solid #000;
-  outline-offset: 2px;
+  outline: 2px solid #CDC4BA;
+  border: none;
+  /* outline-offset: 2px; */
+  transition: 0.3s ease-in-out;
 }
 
 .chat-form button {
   font-size: 18px;
-  background: #000;
+  /* got this color from the search on their site: https://www.loreal.com/en/careers/ */
+  background: #CDC4BA;
   color: #fff;
   border: none;
   padding: 12px;
@@ -110,7 +118,7 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 0.3s ease-in-out;
 }
 
 .chat-form button .material-icons {
@@ -118,11 +126,12 @@ body {
 }
 
 .chat-form button:hover {
-  background: #666666;
+  /* got this color from the search on their site: https://www.loreal.com/en/careers/ */
+  background: #3D3D3D;
 }
 
 .chat-form button:focus {
-  outline: 2px solid #000;
+  outline: 2px solid #CDC4BA;
   outline-offset: 2px;
 }
 
