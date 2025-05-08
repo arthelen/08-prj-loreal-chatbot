@@ -5,9 +5,27 @@
   padding: 0;
 }
 
+/* for headers/titles */
+@font-face {
+    font-family: 'HelveticaNowDisplay';
+    font-style: normal;
+    font-weight: 700;
+    src: url('path/to/HelveticaNowDisplay-W05-Bd.woff2') format('woff2'),
+         url('path/to/HelveticaNowDisplay-W05-Bd.woff') format('woff');
+}
+
+/* for body */
+@font-face {
+  font-family: 'Halesworth Regular';
+  src: url('path/to/halesworth-regular.woff2') format('woff2'),
+       url('path/to/halesworth-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* —— body + fonts —— */
 body {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-family: 'Halesworth Regular', serif;
   color: #333;
   display: flex;
   justify-content: center;
@@ -25,8 +43,8 @@ body {
 }
 
 .site-title {
+  font-family: 'HelveticaNowDisplay', sans-serif;
   font-size: 22px;
-  font-weight: 500;
   margin-bottom: 10px;
 }
 
@@ -69,6 +87,7 @@ body {
 
 .chat-form input {
   flex: 1;
+  font-family: 'Halesworth Regular', serif;
   padding: 12px;
   border: 1px solid #ccc;
   font-size: 18px;
