@@ -9,6 +9,24 @@ const messages = [
 ];
 
 chatForm.addEventListener("submit", async (e) => {
+  const retryBtn = document.getElementById("retryBtn");
+
+retryBtn.addEventListener("click", () => {
+  // Clear UI
+  chatWindow.innerHTML = "";
+  
+  // Reset message history
+  messages.length = 0;
+  messages.push({
+    role: "system",
+    content:
+      "You are a helpful and friendly L’Oréal beauty assistant that knows everything about the brand's products. Only answer questions related to beauty, skincare, haircare, cosmetics, and  L’Oréal products, routines, and recommendations. Your replies should reflect a natural conversation flow with detailed, yet concise answers, with a fun tone and emojis occasionally. If the user asks something unrelated, apologize, say you are unable to answer that, and politely redirect them back to beauty or L’Oréal-related topics.",
+  });
+
+  // Show welcome message again
+  appendMessage("ai", "👋 Hi there! I'm your L’Oréal beauty assistant and happy to help! Ask me anything about products, skincare, haircare routines, and more!");
+});
+
   e.preventDefault();
   const message = userInput.value.trim();
   if (!message) return;
@@ -40,13 +58,13 @@ chatForm.addEventListener("submit", async (e) => {
     });
 
     const data = await response.json();
-    const reply = data.reply || "⚠️ Sorry, I didn't catch that.";
+    const reply = data.reply || "⚠️ Sorry, I didn't catch that!";
 
     chatWindow.lastChild.querySelector(".bubble").textContent = reply;
     messages.push({ role: "assistant", content: reply });
 
   } catch (error) {
-    chatWindow.lastChild.querySelector(".bubble").textContent = "❌ Error getting response.";
+    chatWindow.lastChild.querySelector(".bubble").textContent = "❌ Error getting response! Please try again later.";
     console.error(error);
   }
 });
