@@ -46,6 +46,7 @@ body {
   font-family: 'Halesworth Regular', serif;
   font-weight: 500;
   letter-spacing: 0.05em;
+  color:#CDC4BA;
   font-size: 22px;
   margin-bottom: 10px;
 }
@@ -68,17 +69,40 @@ body {
 
 /* messages */
 .msg {
-  margin-bottom: 14px;
+  display: flex;
+  margin-bottom: 12px;
   font-weight: bolder;
   line-height: 1.5;
 }
 
 .msg.user {
-  color: #000;
+  /* color: #000; */
+  justify-content: flex-end;
 }
 
 .msg.ai {
+  /* color: #3D3D3D; */
+  justify-content: flex-start;
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 20px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.user .bubble {
+  background-color: #CDC4BA;
   color: #3D3D3D;
+  border-bottom-right-radius: 0;
+}
+
+.ai .bubble {
+  background-color: #f0f0f0;
+  color: #3D3D3D;
+  border-bottom-left-radius: 0;
 }
 
 /* input row */
@@ -131,8 +155,27 @@ body {
 }
 
 .chat-form button:focus {
-  outline: 2px solid #CDC4BA;
-  outline-offset: 2px;
+  outline: none;
+}
+
+.chat-window::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chat-window::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  background-color: #CDC4BA;
+  border-radius: 10px;
+  border: 2px solid #f0f0f0;
+  transition: 0.3s ease-in-out;
+}
+
+.chat-window::-webkit-scrollbar-thumb:hover {
+  background-color: #3D3D3D;
 }
 
 /* visually hidden */
@@ -153,7 +196,7 @@ body {
   margin: 60px 0 40px;
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: #3D3D3D;
 }
 
 .site-footer nav {
@@ -162,10 +205,14 @@ body {
 
 .site-footer a {
   margin: 0 8px;
+  font-family: 'Halesworth Regular', serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   color: #000;
   text-decoration: none;
+  transition: 0.3s ease-in-out;
 }
 
 .site-footer a:hover {
-  color: #666666;
+  color: #CDC4BA;
 }
