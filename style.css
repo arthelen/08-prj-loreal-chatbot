@@ -26,7 +26,8 @@
 /* —— body + fonts —— */
 body {
   font-family: 'HelveticaNowDisplay', sans-serif;
-  color: #333;
+  color: #3D3D3D;
+  background: #ffffff;
   display: flex;
   justify-content: center;
 }
@@ -44,10 +45,11 @@ body {
 
 .site-title {
   font-family: 'Halesworth Regular', serif;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.05em;
   color:#CDC4BA;
-  font-size: 22px;
+  font-size: 1.5em;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
@@ -58,7 +60,7 @@ body {
 
 .chat-window {
   height: 360px;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   border-radius: 10px;
   padding: 20px;
   font-size: 18px;
@@ -123,7 +125,7 @@ body {
   color: #3D3D3D;
   background: #f0f0f0;
   outline: none;
-  border: 1px solid #CDC4BA;
+  border: 1px solid #ffffff;
   border-radius: 10px;
   font-size: 18px;
   transition: 0.3s ease-in-out;
@@ -184,6 +186,7 @@ body {
 
 .chat-window::-webkit-scrollbar-track {
   background: #f0f0f0;
+  border-color: #000;
   border-radius: 10px;
 }
 
