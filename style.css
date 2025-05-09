@@ -24,17 +24,89 @@
 }
 
 /* —— body + fonts —— */
+.loreal-navbar {
+  /* background: linear-gradient(to right, #9d0063, #e10069); */
+  background: #CDC4BA;
+  color: white;
+  font-family: 'HelveticaNowDisplay', sans-serif;
+  font-size: 14px;
+  padding: 6px 20px 0;
+}
+
+/* .loreal-navbar:hover {
+  background: white;
+} */
+
+.bottom-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bottom-nav a {
+  font-family: 'Halesworth Regular', serif;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  font-size: 1.3em;
+  color: #3D3D3D;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.bottom-nav a:hover {
+  color: white;
+}
+
+/* .right-info {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.right-info .stock {
+  font-weight: bold;
+} */
+
+.navbar-logo {
+  height: 55px;
+  justify-content: center;
+  display: flex;
+  margin: 20px auto;
+}
+
+.bottom-nav {
+  padding: 10px 0 20px;
+  gap: 70px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+select {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 2px 6px;
+  font-size: 14px;
+}
+
+.icon {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
 body {
   font-family: 'HelveticaNowDisplay', sans-serif;
   color: #3D3D3D;
-  background: #ffffff;
-  display: flex;
+  background: white;
+  display: block;
   justify-content: center;
 }
 
 .page-wrapper {
   width: 90%;
   max-width: 900px;
+  margin: 0 auto;
 }
 
 /* header */
@@ -45,12 +117,17 @@ body {
 
 .site-title {
   font-family: 'Halesworth Regular', serif;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color:#CDC4BA;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  color:#000;
   font-size: 1.5em;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
+}
+
+.logo {
+  height: 30px;
+  margin: 0 auto;
 }
 
 /* chat window */
@@ -68,6 +145,7 @@ body {
   overflow-y: auto;
   background: #fafafa;
   white-space: pre-line;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* messages */
@@ -95,6 +173,7 @@ body {
   border-radius: 20px;
   font-size: 16px;
   line-height: 1.4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .user .bubble {
@@ -125,9 +204,10 @@ body {
   color: #3D3D3D;
   background: #f0f0f0;
   outline: none;
-  border: 1px solid #ffffff;
+  border: 1px solid #f0f0f0;
   border-radius: 10px;
   font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: 0.3s ease-in-out;
 }
 
@@ -154,7 +234,7 @@ body {
   font-size: 18px;
   /* got this color from the search on their site: https://www.loreal.com/en/careers/ */
   background: #3D3D3D;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 10px;
   padding: 12px;
@@ -164,6 +244,7 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: 0.3s ease-in-out;
 }
 
@@ -174,6 +255,7 @@ body {
 .chat-form button:hover {
   /* got this color from the search on their site: https://www.loreal.com/en/careers/ */
   background: #CDC4BA;
+  color: #3D3D3D;
 }
 
 .chat-form button:focus {
@@ -220,9 +302,9 @@ body {
 }
 
 #retryBtn {
-  background-color: #CDC4BA;
-  color: #3D3D3D;
-  border: 1px solid #CDC4BA;
+  background-color: #3D3D3D;
+  color: white;;
+  border: 1px solid #3D3D3D;
   font-weight: bolder;
   margin-top: 20px;
   padding: 10px 16px;
@@ -234,8 +316,9 @@ body {
 }
 
 #retryBtn:hover {
-  background-color: #3D3D3D;
-  color: #fff;
+  background-color: #CDC4BA;
+  border-color: #CDC4BA;
+  color: #3D3D3D;
 }
 
 /* footer */
@@ -255,7 +338,7 @@ body {
   margin: 0 8px;
   font-family: 'Halesworth Regular', serif;
   font-weight: 500;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.07em;
   color: #3D3D3D;
   text-decoration: none;
   transition: 0.3s ease-in-out;
