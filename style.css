@@ -59,6 +59,7 @@ body {
 .chat-window {
   height: 360px;
   border: 1px solid #000;
+  border-radius: 10px;
   padding: 20px;
   font-size: 18px;
   line-height: 1.5;
@@ -82,6 +83,7 @@ body {
 
 .msg.ai {
   /* color: #3D3D3D; */
+  font-weight: bold;
   justify-content: flex-start;
 }
 
@@ -116,25 +118,43 @@ body {
 .chat-form input {
   flex: 1;
   font-family: 'HelveticaNowDisplay', sans-serif;
+  font-weight: bolder;
   padding: 12px;
-  border: 1px solid #3D3D3D;
+  color: #3D3D3D;
+  background: #f0f0f0;
+  outline: none;
+  border: 1px solid #CDC4BA;
+  border-radius: 10px;
   font-size: 18px;
   transition: 0.3s ease-in-out;
 }
 
 .chat-form input:focus {
-  outline: 2px solid #CDC4BA;
-  border: none;
+  outline: none;
+  border: 1px solid #3D3D3D;
   /* outline-offset: 2px; */
   transition: 0.3s ease-in-out;
+}
+
+.chat-form input:hover {
+  outline: none;
+  border: 1px solid #3D3D3D;
+  /* outline-offset: 2px; */
+  transition: 0.3s ease-in-out;
+}
+
+.chat-form input::placeholder {
+  color: #3D3D3D;
+  opacity: 0.5;
 }
 
 .chat-form button {
   font-size: 18px;
   /* got this color from the search on their site: https://www.loreal.com/en/careers/ */
-  background: #CDC4BA;
+  background: #3D3D3D;
   color: #fff;
   border: none;
+  border-radius: 10px;
   padding: 12px;
   width: 48px;
   height: 48px;
@@ -151,7 +171,7 @@ body {
 
 .chat-form button:hover {
   /* got this color from the search on their site: https://www.loreal.com/en/careers/ */
-  background: #3D3D3D;
+  background: #CDC4BA;
 }
 
 .chat-form button:focus {
@@ -194,9 +214,10 @@ body {
 /* footer */
 .site-footer {
   margin: 60px 0 40px;
+  color: #CDC4BA;
   text-align: center;
   font-size: 14px;
-  color: #3D3D3D;
+  font-family: 'HelveticaNowDisplay', sans-serif;
 }
 
 .site-footer nav {
@@ -208,7 +229,7 @@ body {
   font-family: 'Halesworth Regular', serif;
   font-weight: 500;
   letter-spacing: 0.05em;
-  color: #000;
+  color: #3D3D3D;
   text-decoration: none;
   transition: 0.3s ease-in-out;
 }

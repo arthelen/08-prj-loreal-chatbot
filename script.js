@@ -2,10 +2,10 @@ const chatForm = document.getElementById("chatForm");
 const userInput = document.getElementById("userInput");
 const chatWindow = document.getElementById("chatWindow");
 
-appendMessage("ai", "👋 Hi there! I'm your L’Oréal beauty assistant. Ask me anything about products, skincare, haircare routines, and more, I would be happy to help!");
+appendMessage("ai", "👋 Hi there! I'm your L’Oréal beauty assistant and happy to help! Ask me anything about products, skincare, haircare routines, and more!");
 
 const messages = [
-  { role: "system", content: "You are a helpful and friendly L’Oréal beauty assistant that knows everything about the brand's products. Only answer questions related to beauty, skincare, haircare, cosmetics, and  L’Oréal products, routines, and recommendations. Your replies should reflect a natural conversation flow with detailed, yet concise answers, with a fun tone and emojis. If the user asks something unrelated, apologize, say you are unable to answer that, and politely redirect them back to beauty or L’Oréal-related topics." }
+  { role: "system", content: "You are a helpful and friendly L’Oréal beauty assistant that knows everything about the brand's products. Only answer questions related to beauty, skincare, haircare, cosmetics, and  L’Oréal products, routines, and recommendations. Your replies should reflect a natural conversation flow with detailed, yet concise answers, with a fun tone and emojis occasionally. If the user asks something unrelated, apologize, say you are unable to answer that, and politely redirect them back to beauty or L’Oréal-related topics." }
 ];
 
 chatForm.addEventListener("submit", async (e) => {
@@ -17,7 +17,18 @@ chatForm.addEventListener("submit", async (e) => {
   appendMessage("user", message);
   userInput.value = "";
 
-  appendMessage("ai", "💬 Thinking...");
+  const loadingMessages = [
+  "✨ Blending the perfect response...",
+  "💄 Touching up my answer... just a sec!",
+  "🧴 Lathering up some advice for you...",
+  "💬 Just a spritz of brilliance coming right up!",
+  "💁‍♀️ Flipping through our beauty book..."
+  ];
+
+  const randomLoading = () =>
+    loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
+
+  appendMessage("ai", randomLoading());
 
   try {
     const response = await fetch("https://loreal-chatbot.allisonrthelen.workers.dev/", {
